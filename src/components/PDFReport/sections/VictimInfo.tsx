@@ -152,7 +152,7 @@ export const VictimInfo: React.FC<{ data: FormData }> = ({ data }) => (
           <Text style={styles.label}>Desvios de Conduta:</Text>
           <Text style={styles.value}>
             {[
-              ...(data.desviosConduta || []).filter(desvio => desvio !== 'outros'),
+              ...(data.desviosConduta || []).filter((desvio: string) => desvio !== 'outros'),
               data.desviosConduta?.includes('outros') ? data.descricaoOutrosDesvios : null
             ].filter(Boolean).join(', ')}
           </Text>

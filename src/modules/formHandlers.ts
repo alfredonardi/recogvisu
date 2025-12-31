@@ -6,8 +6,6 @@ export class FormHandlers {
   initializeEventListeners() {
     this.handleNaturezaDelito();
     this.handleEstadoVitima();
-    this.handlePreservacao();
-    this.handleResgate();
   }
 
   handleNaturezaDelito() {

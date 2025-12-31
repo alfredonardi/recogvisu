@@ -17,10 +17,14 @@ const styles = StyleSheet.create({
   }
 });
 
-const PDFFooter: React.FC = () => (
-  <View style={styles.footer} fixed render={({ pageNumber, totalPages }) => (
+interface PDFFooterProps {
+  fixed?: boolean;
+}
+
+const PDFFooter: React.FC<PDFFooterProps> = ({ fixed }) => (
+  <View style={styles.footer} fixed={fixed} render={({ pageNumber }) => (
     <Text style={styles.text}>
-      Página {pageNumber} de {totalPages}
+      Página {pageNumber}
     </Text>
   )} />
 );
