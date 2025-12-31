@@ -45,7 +45,7 @@ export const ForensicDetails: React.FC<{ data: FormData }> = ({ data }) => (
     <View style={styles.row}>
       <Text style={styles.value}>
         {[
-          ...(data.estadoCorpo || []).filter(estado => estado !== 'outros'),
+          ...(data.estadoCorpo || []).filter((estado: string) => estado !== 'outros'),
           data.estadoCorpo?.includes('outros') ? data.descricaoOutrosEstadoCorpo : null
         ].filter(Boolean).join(', ')}
       </Text>
@@ -55,7 +55,7 @@ export const ForensicDetails: React.FC<{ data: FormData }> = ({ data }) => (
     <View style={styles.row}>
       <Text style={styles.value}>
         {[
-          ...(data.acoesIdentificacao || []).filter(acao => acao !== 'outros'),
+          ...(data.acoesIdentificacao || []).filter((acao: string) => acao !== 'outros'),
           data.acoesIdentificacao?.includes('outros') ? data.descricaoOutrosAcaoIdentificacao : null
         ].filter(Boolean).join(', ')}
       </Text>
@@ -65,7 +65,7 @@ export const ForensicDetails: React.FC<{ data: FormData }> = ({ data }) => (
     <View style={styles.row}>
       <Text style={styles.value}>
         {[
-          ...(data.sinaisViolencia || []).filter(sinal => sinal !== 'outros'),
+          ...(data.sinaisViolencia || []).filter((sinal: string) => sinal !== 'outros'),
           data.sinaisViolencia?.includes('outros') ? data.descricaoOutrosSinaisViolencia : null
         ].filter(Boolean).join(', ')}
       </Text>
@@ -76,7 +76,7 @@ export const ForensicDetails: React.FC<{ data: FormData }> = ({ data }) => (
       <Text style={styles.label}>Condições:</Text>
       <Text style={styles.value}>
         {[
-          ...(data.condicoesRestricao || []).filter(cond => cond !== 'outros'),
+          ...(data.condicoesRestricao || []).filter((cond: string) => cond !== 'outros'),
           data.condicoesRestricao?.includes('outros') ? data.especificarOutrosRestVit : null
         ].filter(Boolean).join(', ')}
       </Text>
@@ -85,7 +85,7 @@ export const ForensicDetails: React.FC<{ data: FormData }> = ({ data }) => (
       <Text style={styles.label}>Instrumentos:</Text>
       <Text style={styles.value}>
         {[
-          ...(data.instrumentosRestricao || []).filter(inst => inst !== 'outros'),
+          ...(data.instrumentosRestricao || []).filter((inst: string) => inst !== 'outros'),
           data.instrumentosRestricao?.includes('outros') ? data.especificarOutrosIu : null
         ].filter(Boolean).join(', ')}
       </Text>

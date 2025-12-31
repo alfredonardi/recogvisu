@@ -1,6 +1,5 @@
 import { PDFViewer } from '@react-pdf/renderer';
 import PDFDocument from './PDFDocument';
-import PDFContent from './PDFReport/PDFContent';
 import { FormData } from '../types';
 
 interface PDFPreviewProps {
@@ -9,9 +8,7 @@ interface PDFPreviewProps {
 
 const PDFPreview = ({ data }: PDFPreviewProps) => (
   <PDFViewer style={{ width: '100%', height: '100vh' }}>
-    <PDFDocument>
-      <PDFContent data={data} />
-    </PDFDocument>
+    <PDFDocument data={data} />
   </PDFViewer>
 );
 
